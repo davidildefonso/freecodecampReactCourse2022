@@ -1,16 +1,13 @@
 import React from 'react'
 import SvgIcon from './SvgIcon'
-import svg from './flour.svg'
-import image from './assets/images/github-logo.png'
 
 const Navbar = () => {
   return (
 	<nav>
 		<div>
 			<h3>
-				<SvgIcon  filename= 'flour'/>
-				<img src={image} alt="image logo"></img>
-				<img src={svg} alt="image logo"></img>
+				<SvgIcon  filename= 'flour' cssFilename='svgStyles' />
+				<SvgIcon  filename= 'circle' cssFilename='circle'/>
 				My React App
 			</h3>
 		</div>

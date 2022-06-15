@@ -1,4 +1,17 @@
 h1 {
   color: white;
   background-color: red;
+  animation: bg-color-pulse 1s infinite ease-in-out;
+}
+
+@keyframes bg-color-pulse {
+	0%{
+		background-color: red;
+	}
+	50%{
+		background-color: plum;
+	}
+	100%{
+		background-color: red;
+	}	
 }
