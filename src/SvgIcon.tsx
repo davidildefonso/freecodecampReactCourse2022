@@ -1,11 +1,15 @@
 import React, {useState, useEffect} from "react"
-import "./svgStyles.css";
+//import "./svgStyles.css";
+
 
 interface SvgIconType{
 	filename: string,
+	cssFilename: string
 }
 
-const SvgIcon = ({ filename } : SvgIconType) => {
+const SvgIcon = ({ filename, cssFilename } : SvgIconType) => {
+	import(`./styles/svgs/${cssFilename}.css`).then(() => {});
+
 	const [svgContent, setSvgContent] = useState<string | undefined>();
 	
 	const getContent = async () => {

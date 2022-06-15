@@ -1,0 +1,39 @@
+.cls-1 {
+  fill: transparent;
+  stroke: #fff;
+  stroke-miterlimit: 10;
+  stroke-width: 2px;
+  animation: setcolor 2s ease-in-out infinite;
+
+}
+.cls-1:nth-child(2) {
+  -webkit-animation-delay: .5s;
+  animation-delay: .5s;
+}
+.cls-1:nth-child(3) {
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+}
+
+@keyframes setcolor {
+   0%{
+  	fill: #000;
+  }
+  50% {
+    fill: rgb(228, 16, 16);
+  }
+  100% {
+    fill: #000;
+  }
+}
+@-webkit-keyframes setcolor {
+  0%{
+  	fill: #000;
+  }
+  50% {
+    fill: rgb(228, 16, 16);
+  }
+  100% {
+    fill: #000;
+  }
+}
