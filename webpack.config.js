@@ -6,7 +6,8 @@ const config = {
   entry: './src/index.tsx',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].[contenthash].js'
+    filename: '[name].[contenthash].js',
+	publicPath: '/',
   },
   module: {
     rules: [
@@ -42,8 +43,15 @@ const config = {
         ]
       },
       {
-        test: /\.svg$/,
-        use: 'file-loader'
+        test: /\.(png|jp(e*)g|svg|gif)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: 'images/[hash]-[name].[ext]',
+            },
+          },
+        ],
       },
       {
         test: /\.ts(x)?$/,
