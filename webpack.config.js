@@ -4,6 +4,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const config = {
   entry: './src/index.tsx',
+	mode: 'development',
+	devtool: 'source-map',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].[contenthash].js',
@@ -32,8 +34,12 @@ const config = {
         include: /\.module\.css$/
       },
       {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        test: /\.(png|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
+      },
+			{
+        test: /\.svg$/i,
+        use: ["@svgr/webpack"],
       },
       {
         test: /\.ts(x)?$/,
