@@ -1,0 +1,147 @@
+/*** SVG demonstration ***/
+
+/* page */
+svg {
+  background-color: transparent;
+  width: 100px;
+  height: 100px;
+}
+
+#heading {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+#caption {
+  font-size: 12px;
+}
+
+/* flower */
+#flower:hover {
+  cursor: crosshair;
+}
+
+/* gradient */
+#fade-stop-1 {
+  stop-color: blue;
+}
+
+#fade-stop-2 {
+  stop-color: white;
+}
+
+/* petals */
+.segment-fill {
+  fill: var(--segment-fill-fill);
+  stroke: var(--segment-fill-stroke);
+  stroke-width: var(--segment-fill-stroke-width);
+}
+
+.segment-fill:hover {
+  fill: var(--segment-fill-fill-hover);
+  stroke: var(--segment-fill-stroke-hover);
+}
+
+.segment-edge {
+  fill: var(--segment-edge-fill);
+  stroke: var(--segment-edge-stroke);
+  stroke-width: var(--segment-edge-stroke-width);
+}
+
+.segment-edge:hover {
+  stroke: var(--segment-edge-stroke-hover);
+}
+
+/* outer petals */
+#outer-petals {
+  opacity: .75;
+  --segment-fill-fill: rgb(13, 152, 171);
+  --segment-fill-stroke: rgb(11, 11, 52);
+  --segment-fill-stroke-width: 1;
+  --segment-edge-fill: none;
+  --segment-edge-stroke: rgb(192, 228, 241);
+  --segment-edge-stroke-width: 3;
+  --segment-fill-fill-hover: rgb(111, 9, 111);
+  --segment-fill-stroke-hover: none;
+  --segment-edge-stroke-hover: rgb(29, 2, 200);
+}
+
+/*
+ Non-standard way of styling elements referenced via <use> elements,
+ supported by some older browsers
+*/
+#outer-petals .segment-fill {
+  fill: rgb(5, 65, 65);
+  stroke: rgb(3, 55, 122);
+  stroke-width: 1;
+}
+
+#outer-petals .segment-edge {
+  fill: none;
+  stroke: rgb(207, 152, 23);
+  stroke-width: 3;
+}
+
+#outer-petals .segment:hover > .segment-fill {
+  fill: plum;
+  stroke: none;
+}
+
+#outer-petals .segment:hover > .segment-edge {
+  stroke: slateblue;
+}
+
+/* inner petals */
+#inner-petals {
+  --segment-fill-fill: purple;
+  --segment-fill-stroke: purple;
+  --segment-fill-stroke-width: 1;
+  --segment-edge-fill: none;
+  --segment-edge-stroke: yellowgreen;
+  --segment-edge-stroke-width: 9;
+  --segment-fill-fill-hover: darkseagreen;
+  --segment-fill-stroke-hover: none;
+  --segment-edge-stroke-hover: green;
+}
+
+/*
+ Non-standard way of styling elements referenced via <use> elements,
+ supported by some older browsers
+*/
+#inner-petals .segment-fill {
+  fill: rgb(230, 226, 16);
+  stroke: rgb(148, 113, 31);
+  stroke-width: 1;
+}
+
+#inner-petals .segment-edge {
+  fill: none;
+  stroke: yellowgreen;
+  stroke-width: 9;
+}
+
+#inner-petals .segment:hover > .segment-fill {
+  fill: darkseagreen;
+  stroke: none;
+}
+
+#inner-petals .segment:hover > .segment-edge {
+  stroke: green;
+}
+
+
+#outer-petals .segment{
+	animation: bg-color-pulse 1s infinite ease-in-out;
+}
+
+@keyframes bg-color-pulse {
+	0%{
+		fill: #0d98ab;;
+	}
+	50%{
+		fill: plum;
+	}
+	100%{
+		fill: #0d98ab;;
+	}	
+}

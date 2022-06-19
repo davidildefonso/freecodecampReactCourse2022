@@ -11,7 +11,7 @@ const Navbar = () => {
 	<nav>
 		<div>
 			<h3>
-				<SvgImageComponent/>
+				<SvgImageComponent imageFilename='flour' stylesFilename='flour' />
 				<SvgIcon  filename= 'flour' cssFilename='svgStyles' />
 				<SvgIcon  filename= 'circle' cssFilename='circle'/>
 				<SvgIconAsImage  filename= 'circle' cssFilename='circle'/>

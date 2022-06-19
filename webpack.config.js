@@ -39,7 +39,11 @@ const config = {
       },
 			{
         test: /\.svg$/i,
-        use: ["@svgr/webpack"],
+				loader: '@svgr/webpack',
+       // use: ["@svgr/webpack"],
+				options: {
+					svgo: false
+				}
       },
       {
         test: /\.ts(x)?$/,
