@@ -1,0 +1,5 @@
+.hamburguer .line {
+  stroke: #5e83d8;
+  stroke-width: 25px;
+  stroke-linecap: round;
+}
